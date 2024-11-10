@@ -1,4 +1,6 @@
 import express from "express";
+import "./models/Video.js";
+import cors from "cors";
 import "./db.js";
 
 import morgan from "morgan";
@@ -9,7 +11,12 @@ import userRouter from "./routes/userRouter";
 const app = express();
 
 app.use(morgan("dev"));
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+}))
 app.use('/', rootRouter);
 app.use('/video', videoRouter);
 app.use('/user', userRouter);

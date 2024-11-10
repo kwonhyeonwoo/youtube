@@ -1,8 +1,7 @@
 import express from "express";
-import { getVideo, uploadVideo } from "../controllers/videoController";
+import { getVideo, postVideo, uploadVideo } from "../controllers/videoController";
 
 const videoRouter = express.Router();
-videoRouter.get('/', getVideo);
-videoRouter.get('/:id', uploadVideo);
+videoRouter.route('/').post(postVideo).get(getVideo)
 
 export default videoRouter;
