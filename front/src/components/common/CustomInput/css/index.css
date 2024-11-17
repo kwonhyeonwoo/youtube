@@ -1,0 +1,24 @@
+#root .custom-input {
+  width: 420px;
+  height: 50px;
+  padding: 10px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid rgb(222, 224, 224);
+}
+#root .custom-input::-webkit-input-placeholder {
+  color: rgb(106, 122, 137);
+}
+#root .custom-input::-moz-placeholder {
+  color: rgb(106, 122, 137);
+}
+#root .custom-input:-ms-input-placeholder {
+  color: rgb(106, 122, 137);
+}
+#root .custom-input::-ms-input-placeholder {
+  color: rgb(106, 122, 137);
+}
+#root .custom-input::placeholder {
+  color: rgb(106, 122, 137);
+}
