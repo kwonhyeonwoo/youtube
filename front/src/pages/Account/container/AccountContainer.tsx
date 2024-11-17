@@ -1,8 +1,11 @@
 import React, { useCallback, useState } from 'react'
 import Account from '../Account'
+import { AccountType } from 'user';
+import { usePostAccountMutation } from '../../../api/auth-api';
 
 const AccountContainer = () => {
-    const [data, setData] = useState({
+    const [postAccount, { isLoading, isSuccess }] = usePostAccountMutation();
+    const [data, setData] = useState<AccountType>({
         email: "",
         nickName: "",
         password: "",
@@ -26,10 +29,24 @@ const AccountContainer = () => {
             if (password !== passwordCheck) {
                 setErrMsg("비밀번호를 올바르게 읿력해주세요")
             }
+
+            try {
+                const response = await postAccount({
+                    email,
+                    nickName,
+                    password,
+                });
+                const data = await response.data;
+                if (data) {
+                    console.log('data', data)
+                    return data;
+                }
+            } catch (error) {
+                console.log('error', error)
+            }
         },
         [data],
     )
-
 
     return (
         <Account

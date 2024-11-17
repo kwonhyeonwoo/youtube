@@ -6,7 +6,7 @@ type Props = {
 }
 const CustomButton = ({ text, Active }: Props) => {
     return (
-        <button className='custom-button'>{text}</button>
+        <button onClick={Active} className='custom-button'>{text}</button>
     )
 }
 

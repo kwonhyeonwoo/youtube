@@ -3,15 +3,11 @@ import "./css/index.css";
 import CustomInputContainer from '../../components/common/CustomInput/container/CustomInputContainer';
 import CustomButtonContainer from '../../components/common/CustomButton/container/CustomButtonContainer';
 import { Link } from 'react-router-dom';
+import { AccountType } from 'user';
 
 type Props = {
     errMsg: string;
-    data: {
-        email: string;
-        nickName: string;
-        password: string;
-        passwordCheck: string;
-    }
+    data: AccountType;
     UpdateChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     LoginSubmit: () => void;
 }
@@ -71,7 +67,9 @@ const Account = ({ errMsg, data, UpdateChange, LoginSubmit }: Props) => {
                                 minLength={minLength}
                                 maxLength={maxLength}
                                 value={value}
-                                UpdateChange={UpdateChange} name={name} />
+                                UpdateChange={UpdateChange}
+                                name={name}
+                            />
                         ))}
                     </div>
                     <CustomButtonContainer text='회원가입' Active={LoginSubmit} />

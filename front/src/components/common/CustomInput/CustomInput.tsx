@@ -26,7 +26,7 @@ const CustomInput = ({
             name={name}
             minLength={minLength}
             maxLength={maxLength}
-            onChange={() => { }}
+            onChange={UpdateChange}
             value={value}
         />
     )

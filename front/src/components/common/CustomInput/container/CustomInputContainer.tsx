@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import CustomInput from '../CustomInput'
 type Props = {
     type: string;
@@ -18,6 +18,14 @@ const CustomInputContainer = ({
     value,
     UpdateChange
 }: Props) => {
+    const Update = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            if (UpdateChange) {
+                UpdateChange(e);
+            }
+        },
+        [UpdateChange],
+    )
     return (
         <CustomInput
             type={type}
@@ -26,7 +34,7 @@ const CustomInputContainer = ({
             minLength={minLength}
             maxLength={maxLength}
             value={value}
-            UpdateChange={UpdateChange}
+            UpdateChange={Update}
         />
     )
 }
