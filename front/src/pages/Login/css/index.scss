@@ -7,17 +7,49 @@
         &>.login-section {
             height: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            border: 1px solid red;
+            flex-direction: column;
+            padding-top: 100px;
+
+            &>.login-title {
+                font-size: 24px;
+            }
 
             &>.login-card {
                 width: 420px;
                 padding: 20px;
                 box-sizing: border-box;
-                border: 1px solid white;
-                border-radius: 6px;
-                background-color: red;
+                display: flex;
+                flex-direction: column;
+
+                &>.input-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+
+                &>.err-msg-box {
+                    text-align: center;
+                    margin-top: 10px;
+                    color: red;
+                    font-weight: 400;
+                }
+
+                &>.btn-box {
+                    margin-top: 20px;
+                }
+
+                &>.link {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-align: center;
+
+                    &:hover {
+                        color: blue;
+                    }
+                }
+
             }
         }
     }

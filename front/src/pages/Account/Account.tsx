@@ -72,6 +72,9 @@ const Account = ({ errMsg, data, UpdateChange, LoginSubmit }: Props) => {
                             />
                         ))}
                     </div>
+                    {errMsg && <div className='err-msg-box'>
+                        <span className='err-msg'>{errMsg}</span>
+                    </div>}
                     <CustomButtonContainer text='회원가입' Active={LoginSubmit} />
                     <Link className='link' to={"/login"}>이미 회원이신가요? &rarr;</Link>
                 </div>

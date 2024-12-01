@@ -31,6 +31,14 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+#root .account-page > .account-section > .account-card > .err-msg-box {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+#root .account-page > .account-section > .account-card > .err-msg-box > .err-msg {
+  color: red;
+}
 #root .account-page > .account-section > .account-card > .link {
   margin-top: 10px;
   font-size: 14px;

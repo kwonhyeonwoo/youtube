@@ -8,20 +8,56 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid red;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 100px;
+}
+#root .login-page > .login-section > .login-title {
+  font-size: 24px;
 }
 #root .login-page > .login-section > .login-card {
   width: 420px;
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px solid white;
-  border-radius: 6px;
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#root .login-page > .login-section > .login-card > .input-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+#root .login-page > .login-section > .login-card > .err-msg-box {
+  text-align: center;
+  margin-top: 10px;
+  color: red;
+  font-weight: 400;
+}
+#root .login-page > .login-section > .login-card > .btn-box {
+  margin-top: 20px;
+}
+#root .login-page > .login-section > .login-card > .link {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+#root .login-page > .login-section > .login-card > .link:hover {
+  color: blue;
 }

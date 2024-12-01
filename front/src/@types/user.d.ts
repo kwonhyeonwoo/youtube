@@ -5,4 +5,9 @@ declare module "user" {
         password: string;
         passwordCheck: string;
     }
+
+    interface LoginType {
+        email: string;
+        password: string;
+    }
 }

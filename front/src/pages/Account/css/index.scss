@@ -18,6 +18,16 @@
                 align-items: center;
                 justify-content: center;
 
+                &>.err-msg-box {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                    font-weight: 700;
+
+                    &>.err-msg {
+                        color: red;
+                    }
+                }
+
                 &>.link {
                     margin-top: 10px;
                     font-size: 14px;
