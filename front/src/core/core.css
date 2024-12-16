@@ -1,0 +1,232 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import url("https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500;700&display=swap");
+@-webkit-keyframes inside {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes inside {
+  from {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes topside {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes topside {
+  from {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes rightside {
+  from {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes rightside {
+  from {
+    -webkit-transform: translateX(30px);
+            transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+.react-loading-skeleton {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+* {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Pretendard", sans-serif;
+}
+* [contenteditable=true] {
+  outline: unset;
+}
+* [contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  display: block;
+  /* For Firefox */
+  color: #bfbfbf;
+  font-size: 17px;
+  font-family: "pretendard", sans-serif;
+}
+* [placeholder]:empty:focus::before {
+  content: "";
+}
+* h1 {
+  padding: 0;
+}
+
+.fahkwang-text {
+  font-family: "Fahkwang", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Fahkwang", sans-serif;
+  font-family: "pretendard", sans-serif;
+  color: black;
+}
+
+main {
+  min-height: 100vh;
+  -webkit-animation: inside 0.2s ease-in-out;
+          animation: inside 0.2s ease-in-out;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input,
+p,
+textarea {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+  resize: none;
+  font-family: "pretendard", sans-serif;
+}
+input::-webkit-input-placeholder, p::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-family: "pretendard", sans-serif;
+  color: #c6c6c6;
+}
+input::-moz-placeholder, p::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "pretendard", sans-serif;
+  color: #c6c6c6;
+}
+input:-ms-input-placeholder, p:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  font-family: "pretendard", sans-serif;
+  color: #c6c6c6;
+}
+input::-ms-input-placeholder, p::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  font-family: "pretendard", sans-serif;
+  color: #c6c6c6;
+}
+input::placeholder,
+p::placeholder,
+textarea::placeholder {
+  font-family: "pretendard", sans-serif;
+  color: #c6c6c6;
+}
+input:focus,
+p:focus,
+textarea:focus {
+  outline: none;
+}
+
+button,
+a,
+label {
+  padding: unset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: unset;
+  color: black;
+}
+button:focus,
+a:focus,
+label:focus {
+  outline: none;
+}
+button:hover,
+a:hover,
+label:hover {
+  opacity: 0.7;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--main);
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}

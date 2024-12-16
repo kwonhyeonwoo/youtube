@@ -1,0 +1,181 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500;700&display=swap');
+
+@keyframes inside {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes topside {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightside {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.react-loading-skeleton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+* {
+  [contenteditable="true"] {
+    outline: unset;
+  }
+
+  [contenteditable="true"]:empty:before {
+    content: attr(placeholder);
+    display: block;
+    /* For Firefox */
+    color: #bfbfbf;
+    font-size: 17px;
+    font-family: "pretendard", sans-serif;
+  }
+
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  // font-family: "Fahkwang",sans-serif;
+  font-family: "Pretendard",
+  sans-serif;
+
+  [placeholder]:empty:focus::before {
+    content: "";
+  }
+
+  h1 {
+    padding: 0;
+  }
+
+}
+
+.fahkwang-text {
+  font-family: "Fahkwang", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Fahkwang", sans-serif;
+  font-family: "pretendard", sans-serif;
+  color: black;
+  // -webkit-overflow-scrolling: touch;
+}
+
+main {
+  min-height: 100vh;
+  animation: inside 0.2s ease-in-out;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input,
+p,
+textarea {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  resize: none;
+  font-family: "pretendard", sans-serif;
+
+  &::placeholder {
+    font-family: "pretendard", sans-serif;
+    color: #c6c6c6;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button,
+a,
+label {
+  padding: unset;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: unset;
+  color: black;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    transition: 0.2s ease-in-out;
+  }
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--main);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1365px) and (min-width: 768px) {}
+
+@media screen and (max-width: 767px) {}

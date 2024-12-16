@@ -1,0 +1,9 @@
+#root .custom-button {
+  width: 420px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 19px;
+  font-weight: 700;
+  background-color: red;
+  color: white;
+}
