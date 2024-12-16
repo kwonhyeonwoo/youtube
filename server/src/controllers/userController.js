@@ -58,6 +58,7 @@ export const postLogin = async (req, res) => {
             {
                 type: "JWT",
                 email,
+                id: auth._id,
             },
             key,
             {
