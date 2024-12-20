@@ -31,10 +31,12 @@ const LoginContainer = () => {
                 const responseData = await response.data;
                 if (responseError) {
                     const msg = responseError as { data: { msg: string } };
+                    console.log("msg", msg);
                     setErrMsg(msg.data.msg)
                 }
-                const { token } = responseData;
-                localStorage.setItem('token', token);
+                const { data } = responseData;
+                localStorage.setItem('accessToken', data.accessToken);
+                localStorage.setItem("refreshToken", data.refreshToken);
                 return navigate('/');
             } catch (err) {
                 if (error && "data" in error) {
