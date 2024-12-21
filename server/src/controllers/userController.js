@@ -1,9 +1,9 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import Auth from "../models/Auth";
-import jwt from "jsonwebtoken";
+import Refresh from "../models/Refresh";
 import dotenv from "dotenv";
-import { refresh, sign } from "../utils/jwt-utils";
+import { generateAccessToken, generateRefreshToken, refresh, sign } from "../utils/jwt-utils";
 dotenv.config();
 const userController = express();
 
@@ -44,8 +44,12 @@ export const postLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
         const auth = await Auth.findOne({ email });
-        const accessToken = sign(auth)
-        const refreshToken = refresh();
+        let user = {
+            id: auth._id,
+        }
+        console.log('auth', auth)
+        const accessToken = generateAccessToken(user);
+        const refreshToken = generateRefreshToken(user);
         const isMatch = await bcrypt.compare(password, auth.password);
         if (!isMatch || email !== auth.email) {
             console.log('여기')
@@ -54,11 +58,15 @@ export const postLogin = async (req, res) => {
                 msg: "이메일 또는 비밀번호가 틀립니다."
             });
         };
-        
+        await Refresh.create({
+            userId: auth._id,
+            token: refreshToken,
+
+        });
         return res.status(200).json({
             state: true,
             msg: "로그인 성공",
-            data:{
+            data: {
                 accessToken,
                 refreshToken
             },

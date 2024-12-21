@@ -2,14 +2,18 @@ import express from "express";
 import "./models/Video.js";
 import cors from "cors";
 import "./db.js";
+import jwt from "jsonwebtoken";
+
 import morgan from "morgan";
 import rootRouter from "./routes/rootRouter";
 import videoRouter from "./routes/videoRouter";
 import userRouter from "./routes/userRouter";
 import dotenv from "dotenv";
 import Auth from "./models/Auth.js";
+import Refresh from "./models/Refresh.js";
 dotenv.config();
-import { authenticateToken, refresh,  } from "./authMiddleware.js";
+import { authenticateToken, } from "./authMiddleware.js";
+import { generateAccessToken } from "./utils/jwt-utils.js";
 
 const app = express();
 app.use(morgan("dev"));
@@ -20,11 +24,28 @@ app.use(cors({
     credentials: true,
 }))
 app.use('/', rootRouter);
-app.get('/refresh',refresh)
+// accessToken 재발급
+app.post('/token', async (req, res) => {
+    const { token } = req.body;
+    const refresh = await Refresh.findOne({ token });
+
+    if (!token) return res.status(401).json({ message: "토큰이 없습니다." });
+    // DB에서 RefreshToken 확인
+    if (!refresh.token) return res.status(403).json({
+        message: "refresh token이 만료되었습니다."
+    });
+
+    jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
+        if (err) return res.status(403).json({
+            message: "에러"
+        });
+
+        const accessToken = generateAccessToken({ id: user.id });
+        return res.status(200).json({ accessToken });
+    });
+});
 app.get('/user/me', authenticateToken, async (req, res) => {
-    console.log('user')
     try {
-        console.log('user')
 
         const user = await Auth.findById(req.user.id);
         if (!user) {
@@ -39,8 +60,6 @@ app.get('/user/me', authenticateToken, async (req, res) => {
         res.status(500).json({ msg: '서버 오류가 발생했습니다.' });
     }
 });
-
-
 app.use('/user', userRouter);
 app.use('/video', videoRouter);
 
