@@ -1,0 +1,31 @@
+#root {
+    .sidebar-wrapper {
+        padding-top: 90px;
+        position: fixed;
+        row-gap: 22px;
+        display: flex;
+        flex-direction: column;
+
+        &>.sidebar-btn {
+            display: flex;
+            column-gap: 11px;
+            align-items: center;
+            padding: 8px;
+            box-sizing: border-box;
+            border-radius: 10px;
+
+
+            &>.sidebar-btn-title {
+                color: #737373;
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+
+        &>.active-sidebar-btn {
+            background-color: #2e2e2e;
+
+
+        }
+    }
+}
