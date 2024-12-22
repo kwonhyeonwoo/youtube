@@ -1,0 +1,25 @@
+#root .search-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
+  position: relative;
+}
+#root .search-wrapper > .search-input {
+  height: 35px;
+  width: 450px;
+  border: 1px solid rgb(222, 224, 224);
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  padding: 9px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#root .search-wrapper > .search-btn {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}

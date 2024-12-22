@@ -1,0 +1,31 @@
+#root {
+    .header {
+        width: 100%;
+        display: flex;
+        padding: 14px 28px;
+        justify-content: space-between;
+        position: fixed;
+        box-sizing: border-box;
+
+        &>.profile-box {
+            display: flex;
+            column-gap: 20px;
+
+            &>.create-menu-btn-wrapper {
+                position: relative;
+
+                &>.create-menu-btn {
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    background-color: #272727;
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+            }
+
+
+        }
+    }
+}

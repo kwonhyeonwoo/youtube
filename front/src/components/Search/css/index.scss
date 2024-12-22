@@ -1,0 +1,25 @@
+#root {
+    .search-wrapper {
+        display: flex;
+        column-gap: 5px;
+        position: relative;
+
+        &>.search-input {
+            height: 35px;
+            width: 450px;
+            border: 1px solid rgba(222, 224, 224, 1);
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            padding: 9px;
+            box-sizing: border-box;
+        }
+
+        &>.search-btn {
+            position: absolute;
+            right: 15px;
+            top: 8px;
+        }
+
+    }
+}

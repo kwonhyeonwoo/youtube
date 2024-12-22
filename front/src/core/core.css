@@ -115,9 +115,11 @@ body {
   font-family: "Fahkwang", sans-serif;
   font-family: "pretendard", sans-serif;
   color: black;
+  background-color: black;
 }
 
 main {
+  width: 100%;
   min-height: 100vh;
   -webkit-animation: inside 0.2s ease-in-out;
           animation: inside 0.2s ease-in-out;

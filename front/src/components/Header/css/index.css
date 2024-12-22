@@ -1,0 +1,34 @@
+#root .header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 14px 28px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#root .header > .profile-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+#root .header > .profile-box > .create-menu-btn-wrapper {
+  position: relative;
+}
+#root .header > .profile-box > .create-menu-btn-wrapper > .create-menu-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #272727;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}

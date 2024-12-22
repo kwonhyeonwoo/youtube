@@ -2,7 +2,9 @@ import React from 'react'
 import "./css/index.css";
 const Home = () => {
     return (
-        <main className='home-page'>Home</main >
+        <main className='home-page'>
+
+        </main >
     )
 }
 
