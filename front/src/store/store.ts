@@ -5,7 +5,7 @@ import { verifyApi } from "../api/tokenVerify-api";
 
 const store = configureStore({
     reducer: {
-        // auth: AuthReducer,
+        auth: AuthReducer,
         [authApi.reducerPath]: authApi.reducer,
         [verifyApi.reducerPath]: verifyApi.reducer,
     },

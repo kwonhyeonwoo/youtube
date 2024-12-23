@@ -10,4 +10,11 @@ declare module "user" {
         email: string;
         password: string;
     }
+
+    interface Auth{
+        email:string;
+        profile?:string;
+        uid:string;
+        nickName:string;
+    }
 }

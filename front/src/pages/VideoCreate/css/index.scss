@@ -1,1 +1,8 @@
-#root {}
+#root {
+    .video-create-page{
+        &>.video-create-section{
+            color: red;
+                font-size: 22px;
+        }
+    }
+}
