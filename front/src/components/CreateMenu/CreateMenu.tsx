@@ -22,7 +22,7 @@ export default CreateMenu;
 
 const menuLists = [
     {
-        link: "/vide/create",
+        link: "/video/create",
         svg: <FontAwesomeIcon color='white' icon={faVideo} />,
         list: "비디오 생성"
     },

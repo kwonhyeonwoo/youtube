@@ -8,10 +8,19 @@ import SearchContainer from '../Search/container/SearchContainer';
 import CreateMenu from '../CreateMenu/CreateMenu';
 type Props = {
     isMenuOpen: boolean;
-    CreateMenuOpen: () => void;
     profileImg?: string;
+    isLogin: boolean;
+    CreateMenuOpen: () => void;
+    LoginPageNavigate: () => void;
 }
-const Header = ({ profileImg, isMenuOpen, CreateMenuOpen }: Props) => {
+const Header = ({
+    profileImg,
+    isMenuOpen,
+    isLogin,
+    LoginPageNavigate,
+    CreateMenuOpen
+}: Props) => {
+    console.log('isLogin', isLogin)
     return (
         <header className='header'>
             <Link to={"/"} className='logo-box'>
@@ -19,16 +28,26 @@ const Header = ({ profileImg, isMenuOpen, CreateMenuOpen }: Props) => {
             </Link>
             <SearchContainer />
             <div className='profile-box'>
-                <div className='create-menu-btn-wrapper'>
-                    <button className='create-menu-btn' onClick={CreateMenuOpen}>+ 만들기</button>
-                    {isMenuOpen && <CreateMenu />}
-                </div>
+
                 {
-                    profileImg ? "" : (
-                        <FontAwesomeIcon icon={faUser} size={"2xl"} color='white' />
+                    isLogin ? (
+                        !profileImg && isLogin &&
+                        <>
+                            <div className='create-menu-btn-wrapper'>
+                                <button className='create-menu-btn' onClick={CreateMenuOpen}>+ 만들기</button>
+                                {isMenuOpen && <CreateMenu />}
+                            </div>
+                            {profileImg ? "" : <FontAwesomeIcon icon={faUser} size={"2xl"} color='white' />}
+                        </>
+                    ) : (
+                        <button
+                            className='create-menu-btn'
+                            onClick={LoginPageNavigate}
+                        >
+                            로그인
+                        </button>
                     )
                 }
-
             </div>
         </header>
     )
